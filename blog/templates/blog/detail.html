@@ -1,0 +1,9 @@
+{% extends 'home_page/base.html' %}
+
+{% block content %}
+
+<h1>{{ blog.title }}</h1>                                                                        <!-- sent from views.py -->
+<h2>{{ blog.description|safe}}</h2>
+<h2>{{ blog.date }}</h2>
+
+{% endblock %}

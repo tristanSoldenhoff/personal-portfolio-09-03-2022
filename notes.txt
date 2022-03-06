@@ -1,0 +1,46 @@
+To Start
+====================
+python manage.py runserver
+ -> go to chrome and type:     localhost/8000
+
+
+VIDOES
+=====================
+
+Front end youtube video - OVER ALL FRONT END
+https://www.youtube.com/watch?v=zX3ikOsQg58&ab_channel=TutorialsDev
+
+
+
+front end youtube video - SKILLS SECTION:
+https://www.youtube.com/watch?v=pdKMGJL8rk0
+
+
+front end youtube video - FLOATING PARTICLES
+
+
+======================
+
+migrations:
+
+It seems that whenever you make changes to one of the app on a model file you need to migrate those
+changes 
+
+1. python manage.py migrate
+2. python manage.py makemigrations
+3. python manage.py migrate
+
+when model is created or edited just follow step 2 and 1
+
+=========
+
+django: website password
+
+1. python manage.py createsuperuser
+
+username: tristan
+email: 		(blank)
+password: djangoCes123
+
+1. python manage.py changepassword
+

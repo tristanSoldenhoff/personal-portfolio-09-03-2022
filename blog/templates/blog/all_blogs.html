@@ -1,0 +1,27 @@
+{% extends 'home_page/base.html' %}
+
+{% block content %}
+
+<h2>This page has: {{ blogs.count }} blog{{ blogs.count|pluralize }} </h2>
+
+Blog script from all_blogs.html<br>
+
+<br>1. When localhost:8000/blog  is typed, it is picked up by  "path('blog/', include('blog.urls'))"    from urls.py file in personal_portfolio<br>
+<br>2. Then path is forwarded to the urls.py on the blog file<br>
+<br>3. path('', views.all_blogs, name='all_blogs')     this line pretty much retrieves def all_blogs(request): and renders all_blogs.html<br>
+
+<br>*** find out how urlpatterns (a list created in the urls.py from personal_portfolio) is all of a sudden picked across all files.
+<br>*** Info can be found on site below.
+<br><br>          https://docs.djangoproject.com/en/3.1/topics/http/urls/     <br><br>
+
+{% for blog in blogs %}
+
+<a href="{% url 'blog:detail' blog.id %}" ><h2>{{ blog.title }}</h2></a>        <!-- blog:detail    app_name='blog'  -->
+<p>{{ blog.description|striptags }}</p>
+<p5>{{ blog.date|date:'d M Y' }}</p5>                                           <!-- |date:'d M Y'     -->
+
+{% endfor %}
+
+<br><a href="{% url 'home' %}">Back home></a><br>                               <!-- creates link to go back to home page -->
+
+{% endblock %}
